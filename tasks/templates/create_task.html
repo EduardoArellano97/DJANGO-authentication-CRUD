@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <main class="container mt-2 bg-dark py-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form class="card card-body" action="/tasks/create/" method="post">
+                    <h1 class="text-center">Create a New Task</h1>
+                    {{error}}
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="id_title"> Task title: </label>
+                        <input type="text" name="title" id="title" maxlength="100" required id="id_title" class="form-control" placeholder="Title">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_description"> Description </label>
+                        <textarea name="description" cols="40" rows="10" id="id_description" class="form-control" >
+                        </textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_important"> Highly Important </label>
+                        <input type="checkbox" name="important" id="id_important" >
+                    </div>
+                    <div class="mb-3 text-center " >
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+    </main>
+     
+{% endblock %}
+    

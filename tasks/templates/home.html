@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="container py-5">
+    <section class="card card-body">
+        <h1 class="display-1 text-center"> Task Manager Home</h1>
+        <p class="py-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium animi unde fugiat rerum nulla nam nobis distinctio reiciendis dolorem id dolore, voluptates dicta! Quo, voluptatibus cum ratione dolores rerum id nam error aperiam amet laboriosam similique. Dolorum molestias soluta a recusandae velit dicta quod fugit obcaecati ullam maiores ipsa eum beatae, repellendus sapiente fuga est? Placeat cum sit distinctio. In est quod placeat numquam repellat adipisci pariatur inventore dolor eum consectetur, obcaecati consequuntur? Obcaecati beatae ipsum dicta officiis repudiandae perspiciatis ab, dolorum qui ipsa earum laboriosam, necessitatibus neque corporis a facere veniam deleniti provident amet molestiae, exercitationem suscipit sequi itaque!
+        </p>
+        {% if user.is_anonymous %}
+        <div class="d-flex flex-row justify-content-center align-items-center" >
+            <a class="btn btn-primary mx-3"  href="{% url 'login' %}">Log In</a>
+            <a class="btn btn-dark mx-3" href="{% url 'signup' %}">Sign Up</a>
+        </div>
+        {% endif %}
+
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container mt-2 bg-dark py-5">
+    <div class="row"> 
+        <div class="col-md-6 offset-md-3  " >
+            <h1 class="text-center display-3 text-white" >Pending Tasks</h1>
+            <ul class="list-group">
+                {% for task in tasks %}
+                <br>
+                <li class="list-group-item" >
+                    {% if task.important %}
+                    <strong> {{task.title}} </strong>
+                    {% else %}
+                    <p> {{task.title}} </p>
+                    {% endif %}
+                    <p> Created by: {{task.user.username}} </p>
+                    <div class="text-center">
+                        <a href=" {% url 'task_detail' task.id %}"> See more details</a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
+
